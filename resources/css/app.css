@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+}
+
+select {
+    appearance: menulist;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+    body {
+        background: white !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+    .print-break {
+        page-break-before: always;
+    }
+    table {
+        page-break-inside: auto;
+    }
+    tr {
+        page-break-inside: avoid;
+    }
+    .sticky {
+        position: static !important;
+    }
+}
