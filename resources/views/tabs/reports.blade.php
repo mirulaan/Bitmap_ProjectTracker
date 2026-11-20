@@ -24,7 +24,7 @@
         <!-- Document Print Header -->
         <div class="border-b-2 border-slate-800 pb-5 mb-6 flex items-start justify-between">
             <div>
-                <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600">OCS Automation Engineering</span>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600">Bitmap Automation Engineering</span>
                 <h1 class="text-2xl font-black text-slate-900 mt-0.5">{{ $project->name }}</h1>
                 <div class="text-xs text-slate-600 mt-1 space-y-0.5">
                     <p><span class="font-semibold text-slate-800">Client / Customer:</span> {{ $project->customer ?: 'Internal Project' }}</p>
