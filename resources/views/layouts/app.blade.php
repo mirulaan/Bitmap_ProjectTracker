@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $project->name ?? 'Bitmap_ProjectTracker' }}</title>
+    <title>{{ $project->name ?? 'Bitmap Project Tracker' }}</title>
 
     <!-- Self-hosted Fonts (Instrument Sans & Plus Jakarta Sans) -->
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
@@ -79,7 +79,7 @@
                 <!-- Actions: Export, Import, New Task, Storage Indicator -->
                 <div class="flex items-center gap-2">
                     <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> SQLite Connected
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> {{ config('database.default') === 'pgsql' ? 'PostgreSQL' : (config('database.default') === 'sqlite' ? 'SQLite' : ucfirst(config('database.default'))) }} Connected
                     </span>
 
                     <a href="{{ route('project.export') }}" title="Export project JSON backup" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 transition shadow-xs">

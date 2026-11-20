@@ -69,11 +69,11 @@
                     </div>
                     <div>
                         <label class="block font-semibold text-slate-700 mb-1">Duration (Days)</label>
-                        <input type="number" name="duration_days" id="task_duration_days" min="0" value="1" onchange="recalculateDueDate()" class="w-full px-3 py-1.5 border border-slate-200 rounded-lg bg-white">
+                        <input type="number" name="duration_days" id="task_duration_days" min="0" value="1" oninput="recalculateDueDate()" onchange="recalculateDueDate()" class="w-full px-3 py-1.5 border border-slate-200 rounded-lg bg-white">
                     </div>
                     <div>
                         <label class="block font-semibold text-slate-700 mb-1">Target Due Date</label>
-                        <input type="date" name="due_date" id="task_due_date" class="w-full px-3 py-1.5 border border-slate-200 rounded-lg bg-white">
+                        <input type="date" name="due_date" id="task_due_date" onchange="recalculateDuration()" class="w-full px-3 py-1.5 border border-slate-200 rounded-lg bg-white">
                     </div>
                 </div>
 
@@ -347,9 +347,30 @@
         const startVal = document.getElementById('task_start_date').value;
         const durVal = parseInt(document.getElementById('task_duration_days').value, 10) || 0;
         if (startVal) {
-            const d = new Date(startVal);
-            d.setDate(d.getDate() + durVal);
-            document.getElementById('task_due_date').value = d.toISOString().split('T')[0];
+            const parts = startVal.split('-');
+            if (parts.length === 3) {
+                const d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+                d.setDate(d.getDate() + durVal);
+                const y = d.getFullYear();
+                const m = String(d.getMonth() + 1).padStart(2, '0');
+                const day = String(d.getDate()).padStart(2, '0');
+                document.getElementById('task_due_date').value = `${y}-${m}-${day}`;
+            }
+        }
+    }
+
+    function recalculateDuration() {
+        const startVal = document.getElementById('task_start_date').value;
+        const dueVal = document.getElementById('task_due_date').value;
+        if (startVal && dueVal) {
+            const sParts = startVal.split('-');
+            const dParts = dueVal.split('-');
+            if (sParts.length === 3 && dParts.length === 3) {
+                const s = new Date(parseInt(sParts[0], 10), parseInt(sParts[1], 10) - 1, parseInt(sParts[2], 10));
+                const d = new Date(parseInt(dParts[0], 10), parseInt(dParts[1], 10) - 1, parseInt(dParts[2], 10));
+                const diff = Math.round((d - s) / 86400000);
+                document.getElementById('task_duration_days').value = Math.max(0, diff);
+            }
         }
     }
 

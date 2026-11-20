@@ -51,6 +51,13 @@ class TaskController extends Controller
         $duration = (int)($validated['duration_days'] ?? 1);
         $dueDate = $validated['due_date'] ?? date('Y-m-d', strtotime("+$duration days", strtotime($startDate)));
 
+        if (!empty($validated['start_date']) && !empty($validated['due_date'])) {
+            $calcDuration = (int)round((strtotime($validated['due_date']) - strtotime($validated['start_date'])) / 86400);
+            if ($calcDuration >= 0) {
+                $duration = $calcDuration;
+            }
+        }
+
         $task = Task::updateOrCreate(
             ['id' => $id],
             [

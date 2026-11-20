@@ -14,7 +14,7 @@ class ProjectTrackerTest extends TestCase
         foreach (['dashboard', 'tasks', 'gantt', 'reports', 'setup'] as $tab) {
             $response = $this->get('/?tab=' . $tab);
             $response->assertStatus(200);
-            $response->assertSee('Bitmap_ProjectTracker');
+            $response->assertSee('Bitmap Project Tracker');
         }
     }
 

@@ -9,7 +9,7 @@ services:
     ports:
       - "${APP_PORT:-8000}:80"
     environment:
-      APP_NAME: "${APP_NAME:-Bitmap_ProjectTracker}"
+      APP_NAME: "${APP_NAME:-Bitmap Project Tracker}"
       APP_ENV: "${APP_ENV:-production}"
       APP_KEY: "${APP_KEY:-}"
       APP_DEBUG: "${APP_DEBUG:-false}"
@@ -48,7 +48,7 @@ services:
     restart: unless-stopped
     command: ["php", "artisan", "queue:work", "--tries=3", "--timeout=90"]
     environment:
-      APP_NAME: "${APP_NAME:-Bitmap_ProjectTracker}"
+      APP_NAME: "${APP_NAME:-Bitmap Project Tracker}"
       APP_ENV: "${APP_ENV:-production}"
       APP_KEY: "${APP_KEY:-}"
       APP_DEBUG: "${APP_DEBUG:-false}"
@@ -80,7 +80,7 @@ services:
     restart: unless-stopped
     command: ["php", "artisan", "schedule:work"]
     environment:
-      APP_NAME: "${APP_NAME:-Bitmap_ProjectTracker}"
+      APP_NAME: "${APP_NAME:-Bitmap Project Tracker}"
       APP_ENV: "${APP_ENV:-production}"
       APP_KEY: "${APP_KEY:-}"
       APP_DEBUG: "${APP_DEBUG:-false}"

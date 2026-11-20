@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         $project = Project::updateOrCreate(
             ['id' => $data['id']],
             [
-                'name' => $data['name'] ?? 'Bitmap_ProjectTracker',
+                'name' => $data['name'] ?? 'Bitmap Project Tracker',
                 'customer' => $data['customer'] ?? '',
                 'project_manager' => $data['projectManager'] ?? 'Project Manager',
                 'start_date' => $data['startDate'] ?? date('Y-m-d'),
