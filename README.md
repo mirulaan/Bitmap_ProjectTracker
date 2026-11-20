@@ -4,6 +4,7 @@
 ![Laravel](https://img.shields.io/badge/Laravel-13.x-FF2D20?logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql&logoColor=white)
 ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)
 
 **Bitmap_ProjectTracker** is a production-grade industrial automation and hardware deployment project tracking application. Built with high performance, resilience, and offline-first capabilities in mind, it provides full lifecycle management across hardware procurement, panel assembly, PLC/vision software engineering, factory acceptance testing (FAT), and onsite commissioning.
@@ -24,10 +25,10 @@
 ## Tech Stack
 
 - **Backend**: Laravel 13 (PHP 8.3+)
-- **Database**: SQLite (WAL mode enabled)
+- **Database**: PostgreSQL (`pgsql`) / SQLite (test suite & offline dev)
 - **Frontend**: Laravel Blade, Tailwind CSS v4, Chart.js, Chart.js Trendline
 - **Build System**: Vite 8 & Concurrently
-- **Packaging**: Portable Windows IIS / Apache web server support
+- **Packaging**: Portable Windows IIS / Apache web server & Docker Compose support
 
 ---
 
@@ -35,7 +36,7 @@
 
 ### Prerequisites
 
-- PHP 8.3 or newer with `pdo_sqlite` and `mbstring` extensions
+- PHP 8.3 or newer with `pdo_pgsql`, `pdo_sqlite`, and `mbstring` extensions
 - Composer
 - Node.js 18+ and npm
 
