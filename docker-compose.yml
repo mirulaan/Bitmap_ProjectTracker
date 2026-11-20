@@ -7,13 +7,13 @@ services:
     container_name: bitmap_project_tracker_app
     restart: unless-stopped
     ports:
-      - "${APP_PORT:-8000}:80"
+      - "${APP_PORT:-8088}:80"
     environment:
       APP_NAME: "${APP_NAME:-Bitmap Project Tracker}"
       APP_ENV: "${APP_ENV:-production}"
       APP_KEY: "${APP_KEY:-}"
       APP_DEBUG: "${APP_DEBUG:-false}"
-      APP_URL: "${APP_URL:-http://localhost:8000}"
+      APP_URL: "${APP_URL:-http://localhost:8088}"
       DB_CONNECTION: "${DB_CONNECTION:-pgsql}"
       DB_HOST: "${DB_HOST:-192.168.100.4}"
       DB_PORT: "${DB_PORT:-5432}"

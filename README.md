@@ -70,7 +70,7 @@ npm run build
 composer run dev
 ```
 
-Visit `http://localhost:8000` in your browser.
+Visit `http://localhost:8088` in your browser.
 
 ---
 
