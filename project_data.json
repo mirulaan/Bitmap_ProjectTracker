@@ -1,0 +1,160 @@
+{
+  "id": "project-35a3e900-a92c-44f9-9f08-7662fbc01be6",
+  "name": "OCS Project Tracker",
+  "customer": "",
+  "projectManager": "Bitmap",
+  "startDate": "2026-11-17",
+  "endDate": "2027-03-16",
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "System Design & Procurement",
+      "description": "Electrical schematics, mechanical BOM, long-lead hardware such as cameras, PLCs, actuators, safety components.",
+      "order": 1
+    },
+    {
+      "id": "phase-2",
+      "name": "Panel Wiring & Mechanical Assembly",
+      "description": "Control panel build, vision rig assembly, sensor mounting, mechanical integration.",
+      "order": 2
+    },
+    {
+      "id": "phase-3",
+      "name": "Software & PLC Development",
+      "description": "PLC ladder / structured text logic, HMI screens, PC vision/control software, protocol integration.",
+      "order": 3
+    },
+    {
+      "id": "phase-4",
+      "name": "Internal Integration & FAT",
+      "description": "Dry run, cycle time verification, debugging, internal sign-off, Factory Acceptance Test.",
+      "order": 4
+    },
+    {
+      "id": "phase-5",
+      "name": "Onsite Installation & Commissioning",
+      "description": "Delivery, mechanical/electrical hookup at client site, safety checks, commissioning support.",
+      "order": 5
+    },
+    {
+      "id": "phase-6",
+      "name": "SAT & Final Buyoff",
+      "description": "Production run validation, operator training, documentation handover, formal buyoff sign-off.",
+      "order": 6
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-61037ea3-00f9-4445-8890-18d9bad03c58",
+      "phaseId": "phase-1",
+      "parentId": null,
+      "title": "DesignReview_04",
+      "description": "discuss how to make the design compatible to manual packing mode, and if any of the design need any changes",
+      "assigneeIds": [],
+      "groupIds": [
+        "group-project-management"
+      ],
+      "startDate": "2026-11-17",
+      "dueDate": "2026-11-17",
+      "durationDays": 0,
+      "status": "Not Started",
+      "progress": 0,
+      "priority": "Medium",
+      "dependencies": [],
+      "comments": [],
+      "attachments": [],
+      "attachmentIds": [],
+      "isMilestone": false,
+      "milestoneLabel": "",
+      "internalNotes": "",
+      "createdAt": "2026-11-16T11:11:30.944Z",
+      "updatedAt": "2026-11-16T11:12:56.828Z"
+    },
+    {
+      "id": "task-3241fa55-cf88-4438-b9e4-23ffe1823cd9",
+      "phaseId": "phase-1",
+      "parentId": null,
+      "title": "Drawing release for fabrication : IMS",
+      "description": "",
+      "assigneeIds": [],
+      "groupIds": [
+        "group-mechanical"
+      ],
+      "startDate": "2026-11-17",
+      "dueDate": "2026-11-18",
+      "durationDays": 1,
+      "status": "Not Started",
+      "progress": 0,
+      "priority": "Medium",
+      "dependencies": [
+        "task-61037ea3-00f9-4445-8890-18d9bad03c58"
+      ],
+      "comments": [],
+      "attachments": [],
+      "attachmentIds": [],
+      "isMilestone": false,
+      "milestoneLabel": "",
+      "internalNotes": "",
+      "createdAt": "2026-11-16T11:13:09.282Z",
+      "updatedAt": "2026-11-16T11:13:47.204Z"
+    },
+    {
+      "id": "task-2944cc7a-10b1-432a-9506-5f12eeaa5750",
+      "phaseId": "phase-1",
+      "parentId": null,
+      "title": "Parts procument for auto lifter",
+      "description": "",
+      "assigneeIds": [],
+      "groupIds": [],
+      "startDate": "2026-11-19",
+      "dueDate": "2026-11-27",
+      "durationDays": 8,
+      "status": "Not Started",
+      "progress": 0,
+      "priority": "Medium",
+      "dependencies": [],
+      "comments": [],
+      "attachments": [],
+      "attachmentIds": [],
+      "isMilestone": false,
+      "milestoneLabel": "",
+      "internalNotes": "",
+      "createdAt": "2026-11-19T07:56:51.368Z",
+      "updatedAt": "2026-11-19T07:57:15.719Z"
+    }
+  ],
+  "users": [],
+  "groups": [
+    {
+      "id": "group-mechanical",
+      "name": "Mechanical"
+    },
+    {
+      "id": "group-electrical",
+      "name": "Electrical"
+    },
+    {
+      "id": "group-plc",
+      "name": "PLC Team"
+    },
+    {
+      "id": "group-vision",
+      "name": "Vision / Software Team"
+    },
+    {
+      "id": "group-project-management",
+      "name": "Project Management"
+    },
+    {
+      "id": "group-quality",
+      "name": "Quality / Commissioning"
+    }
+  ],
+  "comments": [],
+  "attachmentRegistry": [],
+  "settings": {
+    "autoSave": true,
+    "lastSavedAt": "2026-11-19T07:57:16.927Z",
+    "directoryName": "OCS_ProjectTracker"
+  }
+}
