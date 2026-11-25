@@ -9,5 +9,6 @@
 .env.production
 .phpunit.result.cache
 *.log
+/storage/framework/lsp-*.php
 Thumbs.db
 .DS_Store

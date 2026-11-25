@@ -45,10 +45,10 @@ docker compose up -d --build
 ```
 
 The application will be available at:
-👉 **[http://localhost:8088](http://localhost:8088)**
+👉 **[http://localhost:8628](http://localhost:8628)**
 
 Healthcheck endpoint:
-👉 **[http://localhost:8088/up](http://localhost:8088/up)**
+👉 **[http://localhost:8628/up](http://localhost:8628/up)**
 
 ---
 
@@ -58,7 +58,7 @@ The `docker-compose.yml` file configures the core services connecting to your Po
 
 | Service | Container Name | Description | Port |
 | :--- | :--- | :--- | :--- |
-| `app` | `bitmap_project_tracker_app` | Web application (Nginx + PHP-FPM + Supervisor) | `8088:80` |
+| `app` | `bitmap_project_tracker_app` | Web application (Nginx + PHP-FPM + Supervisor) | `8628:80` |
 | `redis` | `bitmap_project_tracker_redis` | Redis 7 in-memory cache, session, and queue driver | `6379:6379` |
 | `queue` | `bitmap_project_tracker_queue` | Laravel background queue worker (`artisan queue:work`) | Internal |
 | `scheduler` | `bitmap_project_tracker_scheduler` | Laravel task scheduler (`artisan schedule:work`) | Internal |
